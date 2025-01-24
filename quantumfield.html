@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квантование поля и описание взаимодействий</title>
+
+    <!-- Подключение MathJax для рендеринга формул -->
+    <script type="text/javascript" id="MathJax-script" async 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <link rel="stylesheet" href="c:\Users\user\Desktop\ib project 2024-2025\web\quantym\first-lesson.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="#" class="logo">🌌 World of Particles</a>
+        <ul class="nav-links">
+            <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\main_menu.html">В меню</a></li>
+            <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\first_lesson.html">Разделы уроков</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="video-section">
+        <h2>🎥 Видеоурок</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/K-RrgEVVI1c?si=o45gd9fjE_nH7Gjl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+    <h1>📘 Квантование поля и описание взаимодействий</h1>
+
+    <section class="theory">
+        <h2>📘 Теория</h2>
+        <p>Квантование поля — это метод перехода от классической теории поля к квантовой теории поля. В квантовой теории поля частицы считаются возмущениями квантованных полей. Поле можно представить как совокупность гармонических осцилляторов, где операторы создания \(a^\dagger\) и уничтожения \(a\) частиц играют ключевую роль.</p>
+
+        <p>Типы полей:</p>
+        <ul>
+            <li>Скалярные поля (например, поле Хиггса)</li>
+            <li>Векторные поля (например, электромагнитное поле)</li>
+            <li>Спинорные поля (для частиц со спином \(1/2\), например, электронов)</li>
+        </ul>
+
+        <p>Гамильтониан для квантованного гармонического осциллятора можно записать так:  
+            \[
+            H = \frac{1}{2m} p^2 + \frac{1}{2} m \omega^2 x^2
+            \]
+        </p>
+    </section>
+
+    <section class="quiz-section">
+        <h2>🧪 Тест</h2>
+        <form id="quiz-form">
+            <div class="quiz-form">
+                <label>1. Какое квантованное поле описывает фотоны?</label><br>
+                <input type="radio" name="q1" value="синий">Поле Хиггса<br>
+                <input type="radio" name="q1" value="красный">Электромагнитное поле<br>
+                <input type="radio" name="q1" value="синий">Гравитационное поле<br>
+            </div>
+
+            <div class="quiz-form">
+                <label>2. Что описывает оператор \(a^\dagger\) в квантовой теории поля?</label><br>
+                <input type="radio" name="q2" value="синий">Уничтожает частицу<br>
+                <input type="radio" name="q2" value="красный">Создаёт частицу<br>
+                <input type="radio" name="q2" value="синий">Изменяет спин частицы<br>
+            </div>
+
+            <button type="button" id="check-btn">Проверить</button>
+        </form>
+        <div id="result"></div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2024 World of Particles</p>
+</footer>
+
+<script>
+    document.getElementById("check-btn").addEventListener("click", checkQuiz);
+
+    function checkQuiz() {
+        let score = 0;
+        const answers = { q1: "красный", q2: "красный" };
+        const formData = new FormData(document.getElementById("quiz-form"));
+
+        for (let [question, answer] of formData.entries()) {
+            if (answers[question] === answer) {
+                score++;
+            }
+        }
+
+        document.getElementById("result").innerText = "Вы набрали " + score + " из 2 баллов.";
+    }
+</script>
+
+</body>
+</html>
